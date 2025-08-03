@@ -1,0 +1,76 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .header {
+      position: relative;
+      background-image: url("/images/dai-noi-hue.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 1000px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(102, 51, 0, 0.4); /* nâu phủ mờ */
+    }
+
+    .navbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      /* background-color: rgba(0, 0, 0, 0.3); */
+    }
+
+    .logo {
+        display: flex;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .logo img {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      font-size: 60px;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .content{
+      background-color: rgb(255, 185, 214);
+    }
