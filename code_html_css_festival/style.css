@@ -9,7 +9,7 @@
       font-family: 'Segoe UI', sans-serif;
       color: white;
     }
-
+    
     .header {
       position: relative;
       background-image: url("/images/dai-noi-hue.jpg");
@@ -25,13 +25,14 @@
     }
 
     .navbar {
-      position: relative;
+      position: sticky;
+      top: 0;
+      width: 100%;
       z-index: 2;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      /* background-color: rgba(0, 0, 0, 0.3); */
     }
 
     .logo {
@@ -58,7 +59,6 @@
       text-decoration: none;
       transition: 0.3s;
     }
-
 
     .title {
       position: absolute;
