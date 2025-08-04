@@ -1,109 +1,207 @@
-    * {
-        margin: 0;
-         padding: 0;
-        box-sizing: border-box;
-      
-    }
+* {
+    margin: 0;
+     padding: 0;
+    box-sizing: border-box;
+  
+}
+body, html {
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
 
-    body, html {
-        font-family: 'Segoe UI', sans-serif;
-        color: white;
-    }
+.header {
+    position: relative;
+    background-image: url("/images/dai-noi-hue.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(102, 51, 0, 0.4); /* nâu phủ mờ */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    display: flex;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.logo img {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}  
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    padding-right: 15px;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    background-color: rgb(255, 185, 214);
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-self: space-between;
+    align-self: center;
+}   
+
+.text_review_festival_hue {
+    margin-top: 50px;
+    flex: 1;
+    max-width: 50%;
+    padding-left: 40px;
+    width: 50%;
     
-    .header {
-        position: relative;
-        background-image: url("/images/dai-noi-hue.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 1000px;
-    }
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
 
-    .overlay {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(102, 51, 0, 0.4); /* nâu phủ mờ */
-    }
+ .text_review_festival_hue h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #111;
+}
 
-    .navbar {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 2;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-    }
+.text_review_festival_hue {
+    
+}
 
-    .logo {
-        display: flex;
-        font-size: 14px;
-        line-height: 1.4;
-    }
+.footer{
+    background-color: rgb(255, 185, 214);
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+}
+.thecontainer{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+.the1{
+    background-color: #fff;
+    border-radius: 13px;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.the2{
+    background-color: #fff;
+    border-radius: 13px;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.the3{
+    background-color: #fff;
+    border-radius: 13px;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.the1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 13px;  
+    border-top-right-radius: 13px;
+}
+.the2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 13px;  
+    border-top-right-radius: 13px;
+}
+.the3 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 13px;  
+    border-top-right-radius: 13px;
+}
+button{
+    background-color: #fef4d9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Coiny', cursive;
+    font-size: 16px;
+    color: #a78bfa;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+button:hover{
+    background-color: #bcb193;
+    transition: all 0.5s ease;
+}
+H1{
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-    .logo img {
-        height: 40px;
-        vertical-align: middle;
-        margin-right: 10px;
-    }   
-
-    .nav-links {
-        display: flex;
-        gap: 30px;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    .nav-links a {
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-        padding-right: 15px;
-    }
-
-    .title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        font-size: 60px;
-        font-weight: bold;
-        font-family: 'Times New Roman', serif;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    }
-    .content{
-        background-color: rgb(255, 185, 214);
-        width: 100%;
-        height: auto;
-        min-height: 600px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        display: flex;
-        justify-self: space-between;
-        align-self: center;
-    }   
-
-    .text_review_festival_hue {
-        margin-top: 50px;
-        flex: 1;
-        max-width: 50%;
-        padding-left: 40px;
-        width: 50%;
-        
-        font-size: 18px;
-        line-height: 1.6;
-        color: #333;
-    }
-
-     .text_review_festival_hue h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 16px;
-        color: #111;
-    }
-
-    .text_review_festival_hue {
-        
-    }
+/* màu :)) */
+.black{
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.red{
+    color: #c20000;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 20px;   
+    text-align: center; 
+}
