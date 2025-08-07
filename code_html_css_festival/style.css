@@ -1,4 +1,4 @@
-/* màu :)) */   e
+/* màu :)) */   
 .black{
     color: black;
     margin-top: 10px;
@@ -27,62 +27,34 @@ body, html {
 }
 
 .header {
-    position: relative;
- 
+  
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(102, 51, 0, 0.4); /* nâu phủ mờ */
-}   
-
 .navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
-    font-weight: bold;
-    font-size: 14px;
+    
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    padding-right: 15px;
+   
 }
 
 .logo {
-    display: flex;
-    font-size: 14px;
-    line-height: 1.4;
+    
 }
 
 .logo img {
-    height: 40px;
-    vertical-align: middle;
-    margin-right: 10px;
+  
 }  
 
 .slider {
-    background-image: url("/images/dai-noi-hue.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 750px;
-    width: 100%;
+    
 }
 
-.title {
+/* .title {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -92,7 +64,7 @@ body, html {
     font-weight: bold;
     font-family: 'Times New Roman', serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
+} */
 
 .content {
     background-color: rgb(255, 185, 214);
