@@ -1,4 +1,6 @@
+
 /* màu :)) */   
+
 .black{
     color: black;
     margin-top: 10px;
@@ -15,46 +17,115 @@
 }
 
 
+/* chu */
+h1, h2, h3{
+    font-size: 36px;
+    color: #000;
+}
+
+
+
 * {
     margin: 0;
-     padding: 0;
+    padding: 0;
     box-sizing: border-box;
   
 }
+
 body, html {
     font-family: 'Segoe UI', sans-serif;
     color: white;
 }
 
-.header {
-  
+li{
+    display: inline-block;
+    margin: 0 10px;
+    padding-right:7px;
 }
 
-.navbar {
-    
+li,a{
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.nav-links {
-    
+.button_header button{
+    background-color: #EBD6FB;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Coiny', cursive, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #7c3aed;
+    border: 2px solid #c3a6e8;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12), 0 1.5px 4px rgba(0,0,0,0.08);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s;
+    letter-spacing: 1px;
 }
 
-.nav-links a {
-   
+.button_header button:hover {
+    background: linear-gradient(90deg, #e0c3fc 0%, #f5d0fe 100%);
+    color: #fff;
+    border: 2px solid #a78bfa;
+    box-shadow: 0 6px 24px rgba(124, 58, 237, 0.18), 0 2px 8px rgba(0,0,0,0.12);
 }
 
-.logo {
-    
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 5px 10%;
+    z-index: 100;
+    background: transparent;
+    transition: background 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-.logo img {
-  
-}  
+.header.scrolled {
+    background: #F7CFD8;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
 
+.header.scrolled img,
+.header.scrolled .navbar a{
+    filter: none;
+    color: #fff !important;
+}
+
+.header.scrolled .button_header button {
+    filter: none;
+    color: #7c3aed ;
+}
+.header.scrolled .button_header button:hover{
+    background: linear-gradient(90deg, #e0c3fc 0%, #f5d0fe 100%);
+    color: #fff;
+    border: 2px solid #a78bfa;
+    box-shadow: 0 6px 24px rgba(124, 58, 237, 0.18), 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.header .navbar a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+
+.header img {
+    width: 50px;
+    height: auto;
+}
 .slider {
-    
+    background-image: url("/images/dai-noi-hue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+     
 }
 
-/* .title {
+.title {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,10 +135,11 @@ body, html {
     font-weight: bold;
     font-family: 'Times New Roman', serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-} */
+}
 
-.content {
-    background-color: rgb(255, 185, 214);
+/* introdduce */
+.introduce {
+    background-color: rgb(255, 242, 248);
     width: 100%;
     height: auto;
     min-height: 600px;
@@ -77,15 +149,44 @@ body, html {
     justify-self: space-between;
     align-self: center;
 }   
+.button_introduce {
+    margin-top: 50px;
+    background-color: #EBD6FB;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Coiny', cursive, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #7c3aed;
+    border: 2px solid #c3a6e8;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12), 0 1.5px 4px rgba(0,0,0,0.08);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, border 0.3s;
+    letter-spacing: 1px;
+    font-size: 24px;
+    display: inline-block; 
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button_introduce:hover {
+    background: linear-gradient(90deg, #e0c3fc 0%, #f5d0fe 100%);
+    color: #fff;
+    border: 2px solid #a78bfa;
+    box-shadow: 0 6px 24px rgba(124, 58, 237, 0.18), 0 2px 8px rgba(0,0,0,0.12);
+}
 
 .text_review_festival_hue {
+    text-align: justify;
     margin-top: 50px;
     flex: 1;
     max-width: 50%;
-    padding-left: 40px;
+    padding-left: 150px;
+    padding-right: 50px;
     width: 50%;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 2.0;
     color: #333;
 }
 
@@ -108,13 +209,23 @@ body, html {
     aspect-ratio: 4 / 3;             
 }
 
-.footer{
-    background-color: rgb(255, 185, 214);
+.content{
+    background-color: rgb(255, 242, 248);
     width: 100%;
     height: auto;
     min-height: 600px;
 }
-.thecontainer{
+
+.content h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 75px;
+    padding-top: 50px;
+    
+}
+
+.the_container{
     display: flex;
     justify-content: center;
     gap: 100px;
@@ -168,7 +279,7 @@ body, html {
     border-top-left-radius: 13px;  
     border-top-right-radius: 13px;
 }
-button{
+.button-the{
     background-color: #fef4d9;
     border: none;
     padding: 10px 20px;
@@ -179,14 +290,15 @@ button{
     cursor: pointer;
     margin-bottom: 15px;
 }
-button:hover{
+.button-the:hover{
     background-color: #bcb193;
     transition: all 0.5s ease;
 }
 
-h1{
-    font-size: 36px;
-    color: #000;
+
+
+
+.introduce h1 {
     margin-bottom: 40px;
     text-align: center;
 }
@@ -202,23 +314,9 @@ h1{
     color: #a78bfa;
     cursor: pointer;
     margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.nut2 {
-    display: inline-block;       
-    background-color: #FFF2EB;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 24px;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 100px;
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.3s ease;
-}
+
 
 /*hiệu ứng mấy cái nút */
 .nut2:hover {
@@ -230,10 +328,80 @@ h1{
     transition: all 0.5s ease;
 }
 
-/* 
-.banner{
-    background-image: url("/images/banner.png");
+#footer .footer_banner {
+    background-image: url("/images/bannerHue.jpg");
     background-repeat: no-repeat;
-    height: 250px;
-    width: auto;
-} */
+    height: 220px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#footer .footer_text {
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+}
+#footer{
+    background-color: rgb(255, 242, 248);
+}
+#footer .footer_text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+#footer .footer_address_contacts h3 {
+    font-size: 24px;
+}
+#footer .footer_address_contacts p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    padding-top: 10px;
+}
+
+#footer .footer_address_contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 0 20px;
+}
+#footer .f-address {
+    flex: 1;
+    min-width: 220px;
+    text-align: left;
+}
+#footer .f-contacts {
+    flex: 1;
+    min-width: 220px;
+    text-align: right;
+}
+#footer .f-contacts input {
+    margin: 0 auto;
+    width: 340px;
+    display: flex;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    box-sizing: border-box;
+}
+#footer .f-contacts h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* #footer .f-contacts input:focus {
+    outline: none;
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 2px #e9d5ff;
+}
+
