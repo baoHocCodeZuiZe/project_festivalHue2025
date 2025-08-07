@@ -28,17 +28,14 @@ body, html {
 
 .header {
     position: relative;
-    background-image: url("/images/dai-noi-hue.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 1000px;
+ 
 }
 
 .overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(102, 51, 0, 0.4); /* nâu phủ mờ */
-}
+}   
 
 .navbar {
     position: sticky;
@@ -49,6 +46,20 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    padding-right: 15px;
 }
 
 .logo {
@@ -63,18 +74,12 @@ body, html {
     margin-right: 10px;
 }  
 
-.nav-links {
-    display: flex;
-    gap: 30px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    padding-right: 15px;
+.slider {
+    background-image: url("/images/dai-noi-hue.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    width: 100%;
 }
 
 .title {
@@ -120,13 +125,15 @@ body, html {
     color: #111;
 }
 
-.image_festival_hue {
-    background-image: url("/images/3_anh_em.png") ;
-    height: 430px;
-    width: 530px;
-    max-width: 50%;
-    background-size: contain;
-    flex: 1;    
+.img_review_festival_hue {
+    background-image: url("/images/3_anh_em.png");
+    background-repeat: no-repeat;
+    background-size: contain;        
+    background-position: center;      
+    width: 100%;
+    max-width: 600px;
+    flex: 1 1 50%;
+    aspect-ratio: 4 / 3;             
 }
 
 .footer{
