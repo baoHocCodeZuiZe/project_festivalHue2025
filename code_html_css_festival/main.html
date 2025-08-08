@@ -18,13 +18,19 @@
       header.classList.remove('scrolled');
     }
   });
+
+  Let menu = document.querySelector('#menu-icon');
+  Let navbar = document.querySelector('.navbar'); 
+  menu.onclick = () => {
+    navbar.classList.toggle('open');
+  }
 </script>
 <!-- java script end -->
 
 <body>
   <!-- HEADER WEB -->
   <div class="header">
-     <img class="" src="/images/logo-festival-hue-khong-nen.webp" alt="">
+     <img class="logo" src="/images/logo-festival-hue-khong-nen.webp" alt="">
      <div class="navbar">
        <ul>
          <li><a href="#">Giới thiệu</a></li>
@@ -33,10 +39,12 @@
          <li><a href="#">Nghệ thuật Huế</a></li>
        </ul>
      </div>
+
      <div class="button_header">
-       <a href="#"><button type="button">CONTACTS US</button>
-       </a>
+      <a href="#"><button type="button">CONTACTS US</button></a>
+      
      </div>
+     <div class="fa-solid fa-bars" id = "menu-icon"></div>
    </div>
   <!-- SLIDER -->
   <div class="slider">
