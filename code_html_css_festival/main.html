@@ -19,33 +19,48 @@
     }
   });
 
-  Let menu = document.querySelector('#menu-icon');
-  Let navbar = document.querySelector('.navbar'); 
-  menu.onclick = () => {
-    navbar.classList.toggle('open');
-  }
+  
+  const toggleButton = document.getElementById('logo-list');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  toggleButton.onclick = function() {
+    dropdownMenu.classList.toggle('open');
+  };
 </script>
 <!-- java script end -->
 
 <body>
   <!-- HEADER WEB -->
-  <div class="header">
-     <img class="logo" src="/images/logo-festival-hue-khong-nen.webp" alt="">
-     <div class="navbar">
-       <ul>
-         <li><a href="#">Giới thiệu</a></li>
-         <li><a href="#">Làng nghề truyền thống</a></li>
-         <li><a href="#">Ẩm thực</a></li>
-         <li><a href="#">Nghệ thuật Huế</a></li>
-       </ul>
-     </div>
-
-     <div class="button_header">
-      <a href="#"><button type="button">CONTACTS US</button></a>
+    <!-- HEADER WEB -->
+  <header>
+    <div class="nav-bar nav-container">
+      <!-- logo festival 2025 -->
+      <img src="/images/logo-festival-hue-khong-nen-300x298.webp" alt="" class="logo">
       
-     </div>
-     <div class="fa-solid fa-bars" id = "menu-icon"></div>
-   </div>
+      <!-- nav-list -->
+      <ul class="nav-list">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Làng nghề truyền thống</a></li>
+        <li><a href="#">Ẩm thực</a></li>
+        <li><a href="#">Nghệ thuật Huế</a></li>
+      </ul>
+       
+      <a href="#" class="button_header">CONTACTS US</a>
+       
+      <!-- logo list -->
+      <i class="fa-solid fa-bars" id="logo-list"></i>
+    </div>
+    <!-- dropdown menu -->
+    <div class="dropdown-menu">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Làng nghề truyền thống</a></li>
+        <li><a href="#">Ẩm thực</a></li>
+        <li><a href="#">Nghệ thuật Huế</a></li>
+        <li> <a href="#" class="button_header">CONTACTS US</a></li>
+      </div>
+  </header>
+
+
   <!-- SLIDER -->
   <div class="slider">
     <div class="title">KINH ĐÔ XƯA - <br> VẬN HỘI MỚI</div>
