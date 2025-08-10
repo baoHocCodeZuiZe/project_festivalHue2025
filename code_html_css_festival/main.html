@@ -10,22 +10,28 @@
 
 <!-- java script -->
 <script>
+  // Hiệu ứng cuộn cho header
   window.addEventListener('scroll', function() {
     var header = document.querySelector('.header');
-    if(window.scrollY > 30) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if(header) {
+      if(window.scrollY > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
   });
 
-  
-  const toggleButton = document.getElementById('logo-list');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-
-  toggleButton.onclick = function() {
-    dropdownMenu.classList.toggle('open');
-  };
+  // Dropdown menu responsive
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('logo-list');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    if(toggleButton && dropdownMenu) {
+      toggleButton.onclick = function() {
+        dropdownMenu.classList.toggle('open');
+      };
+    }
+  });
 </script>
 <!-- java script end -->
 
@@ -53,17 +59,30 @@
     <!-- dropdown menu -->
     <div class="dropdown-menu">
         <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Làng nghề truyền thống</a></li>
-        <li><a href="#">Ẩm thực</a></li>
         <li><a href="#">Nghệ thuật Huế</a></li>
+        <li><a href="#">Ẩm thực</a></li>
+        <li><a href="#">Làng nghề truyền thống</a></li>
         <li> <a href="#" class="button_header">CONTACTS US</a></li>
       </div>
   </header>
 
 
   <!-- SLIDER -->
-  <div class="slider">
-    <div class="title">KINH ĐÔ XƯA - <br> VẬN HỘI MỚI</div>
+  <div class="img-header">
+    <div class="slider-header">
+      <div class="slide-header active">
+        <img src="/images/dai-noi-hue.jpg" alt="Đại Nội Huế">
+        <div class="title">KINH ĐÔ XƯA - <br> VẬN HỘI MỚI</div>
+      </div>
+      <div class="slide-header">
+        <img src="/images/duoi-co-vinh-quang.webp" alt="Ca Huế">
+        <div class="title">KINH ĐÔ XƯA - <br> VẬN HỘI MỚI</div>
+      </div>
+      <div class="slide-header">
+        <img src="/images/cau-nguyen-hoang.jpg" alt="Ca Huế">
+        <div class="title">KINH ĐÔ XƯA - <br> VẬN HỘI MỚI</div>
+      </div>
+    </div>
   </div>
   <!-- SLIDER END -->
   <!-- HEARDER WEB END -->
@@ -73,7 +92,7 @@
   <div class="introduce">
     <div class="text_review_festival_hue">
       <h1>Festival Huế 2025</h1>
-      <p>Festival Huế 2025 sẽ diễn ra từ ngày 19 đến 24/4/2025, với chủ đề "Kinh đô xưa - Vận hội mới". Sự kiện này hứa hẹn mang đến những trải nghiệm văn hóa đặc sắc, kết nối quá khứ và hiện tại của thành phố Huế.</p>
+      <p> Festival Huế 2025 sẽ diễn ra xuyên suốt năm với định hướng Festival bốn mùa, với chủ đề "Kinh đô xưa - Vận hội mới". Sự kiện này hứa hẹn mang đến những trải nghiệm văn hóa đặc sắc, kết nối quá khứ và hiện tại của thành phố Huế.</p>
       <p>Trong khuôn khổ Festival, sẽ có nhiều hoạt động nghệ thuật, triển lãm và các chương trình biểu diễn nghệ thuật truyền thống, nhằm tôn vinh di sản văn hóa của Huế.</p>
       <a href="#" ><button class="button_introduce">Khám phá ngay</button></a>
     </div>
@@ -93,29 +112,95 @@
     <div class="the_container">
       <!-- THE 1 -->
       <div class="the1">
-        <img src="/images/incense-village.jpg" alt="">
-          <p class="black">làng nghề truyền thống</p>
-          <p class="red"> các làng nghề truyền thống của huế luôn là cái gì đó bla bla</p>
-          <button class="nut1"> view more</button>
+        <img src="/images/lang-khai-dinh.jfif" alt="">
+          <h3>Nghệ Thuật Huế</h3>
+          <p>Nghệ thuật Huế tinh tế, hòa quyện nhạc, họa, kiến trúc và ẩm thực, phản ánh tâm hồn sâu lắng của cố đô.</p>
+          <button class="nut1">Tìm hiểu nha</button>
       </div>
       <!-- THE 2 -->
       <div class="the2">
-        <img src="/images/incense-village.jpg" alt="">
-          <p class="black">làng nghề truyền thống</p>
-          <p class="red"> các làng nghề truyền thống của huế luôn là cái gì đó bla bla</p>
-          <button class="nut1"> view more</button>
+        <img src="/images/am-thuc-hue.jfif" alt="">
+          <h3>ẩm thực Huế</h3>
+          <p>Ẩm thực Huế thanh tao, cầu kỳ, kết hợp hương vị đậm đà và trình bày tinh xảo, thể hiện nét văn hóa cung đình.</p>
+          <button class="nut1">Tìm hiểu nha</button>
       </div>
       <!-- THE 3 -->
       <div class="the3">
-        <img src="/images/incense-village.jpg" alt="">
-          <p class="black">làng nghề truyền thống</p>
-          <p class="red"> các làng nghề truyền thống của huế luôn là cái gì đó bla bla</p>
-          <button class="nut1"> view more</button>z
+        <img src="/images/lang-nghe-truyen-thong.jpg" alt="">
+          <h3>làng nghề truyền thống</h3>
+          <p>Làng nghề truyền thống Huế lưu giữ tinh hoa thủ công, từ nón lá, thêu ren đến gốm, phản ánh bản sắc cố đô.</p>
+          <button class="nut1">Tìm hiểu nha</button>
       </div>
     </div>
   </div>
   <!-- CONTENT END -->
+  
 
+  <!-- Nghệ thuật Huế -->
+<section class="section-hue-art">
+  <h2>Nghệ thuật Huế</h2>
+  <div class="intro">
+    <p>Huế nổi tiếng với các loại hình nghệ thuật truyền thống như ca Huế trên sông Hương, múa cung đình, nhã nhạc cung đình và tranh nghệ thuật. Những giá trị này góp phần làm nên nét đặc sắc riêng của vùng đất cố đô.</p>
+  </div>
+  <div class="art-gallery">
+    <div class="art-item">
+      <img src="/images/ca-hue.jpg" alt="Ca Huế">
+      <h3>Ca Huế trên sông Hương</h3>
+    </div>
+    <div class="art-item">
+      <img src="/images//nha-nhac-cung-dinh.jpg" alt="Nhã nhạc cung đình">
+      <h3>Nhã nhạc cung đình Huế</h3>
+    </div>
+    <div class="art-item">
+      <img src="/images/tuong-hue.jfif" alt="Tranh nghệ thuật">
+      <h3>Tuồng Huế</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Ẩm thực Huế -->
+<section class="section-hue-food">
+  <h2>Ẩm thực Huế</h2>
+  <div class="intro">
+    <p>Ẩm thực Huế đa dạng, tinh tế với nhiều món ăn đặc sản như bún bò Huế, bánh bèo, bánh khoái, chè Huế... Mỗi món ăn đều mang đậm dấu ấn văn hóa và lịch sử của vùng đất cố đô.</p>
+  </div>
+  <div class="food-gallery">
+    <div class="food-item">
+      <img src="/images/bun-bo.jfif" alt="Bún bò Huế">
+      <h3>Bún bò Huế</h3>
+    </div>
+    <div class="food-item">
+      <img src="/images/banh-beo.jfif" alt="Bánh bèo">
+      <h3>Bánh bèo Huế</h3>
+    </div>
+    <div class="food-item">
+      <img src="/images/che-hue.jfif" alt="Chè Huế">
+      <h3>Chè Huế</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Làng nghề truyền thống Huế -->
+<section class="section-hue-craft">
+  <h2>Làng nghề truyền thống Huế</h2>
+  <div class="intro">
+    <p>Huế là nơi hội tụ nhiều làng nghề truyền thống như làng hương Thủy Xuân, làng nón Phú Cam, làng gốm Phước Tích... Những làng nghề này không chỉ giữ gìn giá trị văn hóa mà còn tạo nên nét đẹp riêng cho Huế.</p>
+  </div>
+  <div class="craft-gallery">
+    <div class="craft-item">
+      <img src="/images/incense-village.jpg" alt="Làng hương Thủy Xuân">
+      <h3>Làng hương Thủy Xuân</h3>
+    </div>
+    <div class="craft-item">
+      <img src="/images/lang-non-phu-cam-1.webp" alt="Làng nón Phú Cam">
+      <h3>Làng nón Phú Cam</h3>
+    </div>
+    <div class="craft-item">
+      <img src="/images/lang-gom.jpg" alt="Làng gốm Phước Tích">
+      <h3>Làng gốm Phước Tích</h3>
+    </div>
+  </div>
+</section>
 
 
   <!-- FOOTER -->
@@ -131,7 +216,7 @@
       <div class="footer_address_contacts">
         <!-- address -->
          <div class="f-address">
-          <h3>ĐỊA CHỈ VĂN PHÒNG</h3>
+          <h3>DIA CHỈ VĂN PHÒNG</h3>
           <p><i class="fas fa-map-marker-alt" style="color: black;"></i> 77 Nguyễn Huệ, Phú Nhuận, Huế, Thành phố Huế</p>
          </div>
          <!-- contact -->
