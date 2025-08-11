@@ -11,25 +11,64 @@
 <!-- java script -->
 <script>
   // Hiệu ứng cuộn cho header
-  window.addEventListener('scroll', function() {
-    var header = document.querySelector('.header');
-    if(header) {
-      if(window.scrollY > 30) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  window.addEventListener('scroll', () => {
+  const fader = document.querySelector('header');
+  if (window.scrollY > 50) {
+    fader.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)';
+    } else {
+    fader.style.background = 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%)';
     }
   });
-
   // Dropdown menu responsive
   document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('logo-list');
     const dropdownMenu = document.querySelector('.dropdown-menu');
+    const closeBtn = document.querySelector('.dropdown-menu .close-dropdown');
     if(toggleButton && dropdownMenu) {
-      toggleButton.onclick = function() {
-        dropdownMenu.classList.toggle('open');
-      };
+        toggleButton.onclick = function() {
+            dropdownMenu.classList.toggle('open');
+        };
+    }
+    if(closeBtn && dropdownMenu) {
+        closeBtn.onclick = function() {
+            dropdownMenu.classList.remove('open');
+        };
+    }
+  });
+  // nhấn nút trượt
+  document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetSelector = link.getAttribute('href');
+      const targetElement = document.querySelector(targetSelector);
+      if (!targetElement) return;
+
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Slider tự chuyển ảnh cho slider-header
+    const headerSlides = document.querySelectorAll('.slide-header');
+    let headerCurrent = 0;
+    function showHeaderSlide(idx) {
+      headerSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+      });
+    }
+    if(headerSlides.length) {
+      setInterval(() => {
+        headerCurrent = (headerCurrent + 1) % headerSlides.length;
+        showHeaderSlide(headerCurrent);
+      }, 3500);
+      showHeaderSlide(headerCurrent);
     }
   });
 </script>
@@ -45,25 +84,28 @@
       
       <!-- nav-list -->
       <ul class="nav-list">
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Làng nghề truyền thống</a></li>
-        <li><a href="#">Ẩm thực</a></li>
-        <li><a href="#">Nghệ thuật Huế</a></li>
+        <li><a href="#introduce_section" class="scroll-link">Giới thiệu</a></li>
+        <li><a href="#section-hue-art-slider" class="scroll-link">Nghệ thuật Huế</a></li>
+        <li><a href="#section-hue-food-slider" class="scroll-link">Ẩm thực</a></li>
+        <li><a href="#section-hue-craft-slider" class="scroll-link">Làng nghề truyền thống</a></li>
       </ul>
        
-      <a href="#" class="button_header">CONTACTS US</a>
+      <a href="#section-contact-us" class="button_header" class="scroll-link">CONTACTS US</a>
        
       <!-- logo list -->
       <i class="fa-solid fa-bars" id="logo-list"></i>
     </div>
     <!-- dropdown menu -->
     <div class="dropdown-menu">
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Nghệ thuật Huế</a></li>
-        <li><a href="#">Ẩm thực</a></li>
-        <li><a href="#">Làng nghề truyền thống</a></li>
-        <li> <a href="#" class="button_header">CONTACTS US</a></li>
-      </div>
+      <span class="close-dropdown"><i class="fas fa-times"></i></span>
+      <ul>
+        <li><a href="#introduce_section">Giới thiệu</a></li>
+        <li><a href="#section-hue-art-slider">Nghệ thuật Huế</a></li>
+        <li><a href="#section-hue-food-slider">Ẩm thực</a></li>
+        <li><a href="#section-hue-craft-slider">Làng nghề truyền thống</a></li>
+        <li> <a href="#section-contact-us" class="button_header" class="scroll-link">CONTACTS US</a></li>
+      </ul>
+    </div>
   </header>
 
 
@@ -89,7 +131,7 @@
 
 
   <!-- INTRODUCE -->
-  <div class="introduce">
+  <div class="introduce" , id="introduce_section">
     <div class="text_review_festival_hue">
       <h1>Festival Huế 2025</h1>
       <p> Festival Huế 2025 sẽ diễn ra xuyên suốt năm với định hướng Festival bốn mùa, với chủ đề "Kinh đô xưa - Vận hội mới". Sự kiện này hứa hẹn mang đến những trải nghiệm văn hóa đặc sắc, kết nối quá khứ và hiện tại của thành phố Huế.</p>
@@ -115,21 +157,21 @@
         <img src="/images/lang-khai-dinh.jfif" alt="">
           <h3>Nghệ Thuật Huế</h3>
           <p>Nghệ thuật Huế tinh tế, hòa quyện nhạc, họa, kiến trúc và ẩm thực, phản ánh tâm hồn sâu lắng của cố đô.</p>
-          <button class="nut1">Tìm hiểu nha</button>
+          <button class="nut1"><a href="https://khamphahue.com.vn/Hue-24h/Van-hoa-Nghe-thuat">Tìm hiểu nha</a></button>
       </div>
       <!-- THE 2 -->
       <div class="the2">
         <img src="/images/am-thuc-hue.jfif" alt="">
           <h3>ẩm thực Huế</h3>
           <p>Ẩm thực Huế thanh tao, cầu kỳ, kết hợp hương vị đậm đà và trình bày tinh xảo, thể hiện nét văn hóa cung đình.</p>
-          <button class="nut1">Tìm hiểu nha</button>
+          <button class="nut1"><a href="https://www.traveloka.com/vi-vn/explore/activities/16-mon-dac-san-hue-nhat-dinh-phai-thu/58422">Tìm hiểu nha</a></button>
       </div>
       <!-- THE 3 -->
       <div class="the3">
         <img src="/images/lang-nghe-truyen-thong.jpg" alt="">
           <h3>làng nghề truyền thống</h3>
           <p>Làng nghề truyền thống Huế lưu giữ tinh hoa thủ công, từ nón lá, thêu ren đến gốm, phản ánh bản sắc cố đô.</p>
-          <button class="nut1">Tìm hiểu nha</button>
+          <button class="nut1"><a href="https://langngheviet.com.vn/nhung-lang-nghe-truyen-thong-noi-tieng-xu-hue-30768.html">Tìm hiểu nha</a></button>
       </div>
     </div>
   </div>
@@ -137,7 +179,7 @@
   
 
   <!-- Nghệ thuật Huế -->
-<section class="section-hue-art">
+<section class="section-hue-art" id="section-hue-art-slider">
   <h2>Nghệ thuật Huế</h2>
   <div class="intro">
     <p>Huế nổi tiếng với các loại hình nghệ thuật truyền thống như ca Huế trên sông Hương, múa cung đình, nhã nhạc cung đình và tranh nghệ thuật. Những giá trị này góp phần làm nên nét đặc sắc riêng của vùng đất cố đô.</p>
@@ -159,7 +201,7 @@
 </section>
 
 <!-- Ẩm thực Huế -->
-<section class="section-hue-food">
+<section class="section-hue-food" id="section-hue-food-slider">
   <h2>Ẩm thực Huế</h2>
   <div class="intro">
     <p>Ẩm thực Huế đa dạng, tinh tế với nhiều món ăn đặc sản như bún bò Huế, bánh bèo, bánh khoái, chè Huế... Mỗi món ăn đều mang đậm dấu ấn văn hóa và lịch sử của vùng đất cố đô.</p>
@@ -181,7 +223,7 @@
 </section>
 
 <!-- Làng nghề truyền thống Huế -->
-<section class="section-hue-craft">
+<section class="section-hue-craft" id="section-hue-craft-slider">
   <h2>Làng nghề truyền thống Huế</h2>
   <div class="intro">
     <p>Huế là nơi hội tụ nhiều làng nghề truyền thống như làng hương Thủy Xuân, làng nón Phú Cam, làng gốm Phước Tích... Những làng nghề này không chỉ giữ gìn giá trị văn hóa mà còn tạo nên nét đẹp riêng cho Huế.</p>
@@ -208,7 +250,7 @@
     <!-- banner -->
       <div class="footer_banner"></div>
     <!-- text -->
-     <div class="footer_text">
+     <div class="footer_text" id="section-contact-us">
         <h1>CONTACT US</h1>
         <p>Hãy liên hệ với chúng tôi sớm nhất có thể trải nghiệm <br> Festival Huế 2025 một cách tốt nhất</p>
      </div>
@@ -216,12 +258,12 @@
       <div class="footer_address_contacts">
         <!-- address -->
          <div class="f-address">
-          <h3>DIA CHỈ VĂN PHÒNG</h3>
-          <p><i class="fas fa-map-marker-alt" style="color: black;"></i> 77 Nguyễn Huệ, Phú Nhuận, Huế, Thành phố Huế</p>
+          <h3><i class="fas fa-map-marker-alt" style="color: black;"></i>   ADDRESS</h3>
+          <p> 77 Nguyễn Huệ, Phú Nhuận, Huế, Thành phố Huế</p>
          </div>
          <!-- contact -->
          <div class="f-contacts">
-          <h3><i class="fas fa-phone"></i>  LIÊN HỆ VỚI CHÚNG TÔI</h3>
+          <h3><i class="fas fa-phone"></i>   CONTACTS US</h3>
               <input type="text" placeholder="Họ và tên" >
               <input type="text" placeholder="Số điện thoại">
               <input type="email" placeholder="Email của bạn">
